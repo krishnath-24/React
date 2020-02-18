@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  margin-left: 1%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.ninja{
+  background: lightblue;
+  color  :green;
+  width: fit-content;
+}
+
+h4{
+  margin : 1px 0px;
+  padding: 0px;
+  background: lightgreen;
+  color: blue;
+}
+
+button{
+  border-radius: 7px;
+  opacity: 0.9;
+  background: lightgray
+}
+
+
+form{
+  display: block;
+  float: none;
+  margin-top: 3%;
+}
+input{
+  display: block;
+  margin-top: 1%;
+}
