@@ -1,34 +1,16 @@
 import React,{Component} from 'react';
-import Rainbow from '../hoc/Rainbow';
-import axios from 'axios';
 import {Link} from 'react-router-dom';
-import Pokeball from './pokeball.png'
+import Pokeball from './pokeball.png';
+import { connect } from 'react-redux';
+
+
+
 class Home extends Component{
-
-    state = {
-
-        posts : []
-    }
-
-    componentDidMount(){
-
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(posts => {
-
-            console.log(posts);
-            this.setState({
-                posts : posts.data
-            });
-
-        }).catch( err => {
-            console.log(err);
-        });
-    }
-
 
     render() {
 
-        const {posts} = this.state;
+        console.log(this.props);
+        const {posts} = this.props;
 
         const postList = posts.length ? (
 
@@ -61,4 +43,11 @@ class Home extends Component{
     }
 }
 
-export default Rainbow(Home);
+const mapStateToProps = (state) => {
+
+    return {
+        posts : state.posts
+    }
+}
+
+export default connect(mapStateToProps)(Home);

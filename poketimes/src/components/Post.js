@@ -1,46 +1,20 @@
 import React,{Component} from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import Rainbow from '../hoc/Rainbow';
 
 
 
 class Post extends Component{
-
-    state = {
-        post : null
-    }
-    
-
-    componentDidMount() {
-
-        var id = this.props.match.params.post_id;
-        var path = 'https://jsonplaceholder.typicode.com/posts/' + id;
-
-        axios.get(path)
-        .then((post) => {
-            
-            this.setState({
-                post : post.data
-            });
-            setTimeout((data) => {
-                console.log(data);
-            }, 500);
-        
-        }).catch(err => {
-            console.log(err);
-        });
-        
-        
-    }
-
     
     render() {
 
-        const post = this.state.post ? (
+        console.log(this.props.post);
+        const post = this.props.post ? (
             <div className="container">
                 <div className="post card">
                     <div className="card-content">
-                        <strong><span className="card-title">{this.state.post.title}</span></strong>
-                        <em><p className="card-body">{this.state.post.body}</p></em>
+                        <strong><span className="card-title">{this.props.post.title}</span></strong>
+                        <em><p className="card-body">{this.props.post.body}</p></em>
                     </div>
                 </div>
             </div>
@@ -57,5 +31,20 @@ class Post extends Component{
         )
     }
 }
+const mapStateToProps = (state,ownProps) => {
 
-export default (Post);
+    let id = ownProps.match.params.post_id;
+    console.log(state.posts);
+    var p= {
+        post : state.posts.find( post => post.id === id )
+    }
+
+    return p;
+}
+
+const mapDispatchToProps = (dispatch) => {
+
+    
+}
+
+export default connect(mapStateToProps)(Rainbow((Post)));
