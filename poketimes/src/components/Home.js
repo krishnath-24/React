@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 class Home extends Component{
 
-    render() {
+    render() {  
 
         console.log(this.props);
         const {posts} = this.props;
@@ -27,7 +27,7 @@ class Home extends Component{
                 )
             })
         ) : (
-            <p>No posts yet!</p>
+            <p className="center">No posts yet!</p>
         )
 
         return (

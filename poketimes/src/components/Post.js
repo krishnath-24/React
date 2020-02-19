@@ -1,14 +1,20 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import Rainbow from '../hoc/Rainbow';
-
+import { deletePost } from '../actions/deletePost'
 
 
 class Post extends Component{
+
+    handleClick = () => {
+
+        this.props.deletePost(this.props.post.id);
+        this.props.history.push('/');
+    }
     
     render() {
 
-        console.log(this.props.post);
+        console.log(this.props);
         const post = this.props.post ? (
             <div className="container">
                 <div className="post card">
@@ -16,6 +22,11 @@ class Post extends Component{
                         <strong><span className="card-title">{this.props.post.title}</span></strong>
                         <em><p className="card-body">{this.props.post.body}</p></em>
                     </div>
+                </div>
+                <div className="center">
+                    <button className="btn gray" onClick={this.handleClick}>
+                        Delete Post
+                    </button>
                 </div>
             </div>
         ) : (
@@ -34,17 +45,20 @@ class Post extends Component{
 const mapStateToProps = (state,ownProps) => {
 
     let id = ownProps.match.params.post_id;
-    console.log(state.posts);
-    var p= {
+    
+    return {
         post : state.posts.find( post => post.id === id )
     }
-
-    return p;
-}
-
-const mapDispatchToProps = (dispatch) => {
 
     
 }
 
-export default connect(mapStateToProps)(Rainbow((Post)));
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+
+        deletePost : (id) => {dispatch(deletePost(id)) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Rainbow((Post)));
