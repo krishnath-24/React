@@ -13,6 +13,7 @@ body {
   border-bottom-left-radius: 20px;
   padding: 10px;
   border: 1px solid #cccccc;
+  width: fit-content;
 }
 .cart-item:hover{
   box-shadow: 1px 1px 5px 2px #cccccc;
@@ -34,6 +35,7 @@ body {
   cursor: pointer;
 }
 
-.cart-item-container{
+.cart{
   display:  flex;
+  flex-direction: column;
 }

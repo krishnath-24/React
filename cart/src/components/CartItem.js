@@ -1,11 +1,10 @@
 import React from 'react';
 
-class CartItem extends React.Component {
+const CartItem = (props) => {
 
-    render() {
-        const { title, price, quantity, image } = this.props.product;
-        const {product} = this.props;
-        console.log('this.props',this.props);
+        const { title, price, quantity, image } = props.product;
+        const {product} = props;
+        console.log('this.props',props);
         return (
             <div className="cart-item">
 
@@ -20,14 +19,13 @@ class CartItem extends React.Component {
 
                     <div className="cart-item-actions">
                         {/* {Buttons here} */}
-                        <img onClick={() => this.props.onIncrease(product)} alt="increase" className="action-icons" src="https://image.flaticon.com/icons/svg/864/864378.svg"></img>
-                        <img onClick={() => this.props.onDecrease(product)} alt="decrease" className="action-icons" src="https://image.flaticon.com/icons/svg/864/864373.svg"></img>
-                        <img onClick = {() => this.props.onDelete(product.id)} alt="delete" className="action-icons" src="https://image.flaticon.com/icons/svg/1214/1214428.svg"></img>
+                        <img onClick={() => props.onIncrease(product)} alt="increase" className="action-icons" src="https://image.flaticon.com/icons/svg/864/864378.svg"></img>
+                        <img onClick={() => props.onDecrease(product)} alt="decrease" className="action-icons" src="https://image.flaticon.com/icons/svg/864/864373.svg"></img>
+                        <img onClick = {() => props.onDelete(product.id)} alt="delete" className="action-icons" src="https://image.flaticon.com/icons/svg/1214/1214428.svg"></img>
                     </div>
                 </div>
             </div>
         )
-    }
 }
 
 const styles = {
