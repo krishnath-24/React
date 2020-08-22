@@ -9,6 +9,13 @@ body {
 .cart-item {
   display: inline-flex;
   margin: 20px 10px;
+  transition: all 200ms ease-in-out;
+  border-bottom-left-radius: 20px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+}
+.cart-item:hover{
+  box-shadow: 1px 1px 5px 2px #cccccc;
 }
 .cart-item .right-block {
   padding: 0 20px;
@@ -25,4 +32,8 @@ body {
 }
 .action-icons:hover {
   cursor: pointer;
+}
+
+.cart-item-container{
+  display:  flex;
 }

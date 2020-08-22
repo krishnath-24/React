@@ -1,4 +1,4 @@
-This project is made with [Create React App](https://github.com/facebook/create-react-app). It is a mini shopping cart where user can change quatity, delete an item in the cart
+This project is made with [Create React App](https://github.com/facebook/create-react-app). It is a mini shopping cart where user can change quantity, delete an item in the cart
 
 clone the repository or download the zip file
 
@@ -13,4 +13,6 @@ automatically opens [http://localhost:3000](http://localhost:3000) to view it in
 
 The page will reload if you make edits.<br />
 
-###
+### contribution
+
+###  feel free to contribute
