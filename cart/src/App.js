@@ -1,11 +1,13 @@
 import React from 'react';
-
+import CartItem from './components/CartItem'
 function App() {
   return (
     <div className="App">
-      <h2>Hey welcome to the react app.</h2>
+      <CartItem/>
     </div>
   );
 }
+
+
 
 export default App;
