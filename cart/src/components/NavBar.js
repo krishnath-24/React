@@ -5,7 +5,8 @@ const NavBar = (props) =>  {
         return (
             <div className="navbar" style = {styles.nav}>
                 <div style = {styles.cartIconContainer}>
-                    <img style={styles.cartIcon} src="https://image.flaticon.com/icons/svg/565/565610.svg" />
+                    
+                    <img alt="cart-img" style={styles.cartIcon} src="https://image.flaticon.com/icons/svg/565/565610.svg" />
                     <span style={styles.cartIconCount} >{props.itemCount}</span>
                 </div>
             </div>
