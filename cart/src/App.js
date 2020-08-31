@@ -117,10 +117,13 @@ class App extends React.Component {
     return totalPrice;
   }
 
-  /* 
-    Function to handle the deleting of the elements from the cart
+  
+  /**
+   * Used to delete an item from the cart
+   * 
+   * @param  { the id of the item } id
    */
-  handleDeleteProduct = (id,quantity) => {
+  handleDeleteProduct = (id) => {
 
     const docRef = this.db.collection('products').doc(id);
 
