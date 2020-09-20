@@ -2,6 +2,14 @@ import React from 'react';
 
 class MovieCard extends React.Component {
 
+    // constructor() {
+    //     super();
+    // }   
+
+    addFavourite = () => {
+        console.log('adding to favourtite')
+    }
+
     
     render(){
         
@@ -16,7 +24,7 @@ class MovieCard extends React.Component {
                     <div className="plot">{movie.Plot}</div> 
                     <div className="footer">
                         <div className="rating">{movie.imdbRating}</div>
-                        <button className="favourite-btn">Favourite</button>
+                        <button onclick = {this.addFavourite} className="favourite-btn">Favourite</button>
                     </div> 
                 </div>
             </div>
